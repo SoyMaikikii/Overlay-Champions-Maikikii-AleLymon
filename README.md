@@ -14,7 +14,7 @@ Overlay HTML/CSS/JS para OBS con soporte para:
 
 ## Uso en OBS
 
-Crea una Fuente de Navegador con resolución 1920x1070 con una URL como esta:
+Crea una Fuente de Navegador con resolución 1920x1080 con una URL como esta:
 
 `https://soymaikikii.github.io/Overlay-Champions-Maikikii-AleLymon/index.html?canal=TUCANAL&overlay=1`
 
