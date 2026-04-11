@@ -101,9 +101,9 @@ Ejemplos:
 
 ## Ejemplos rápidos
 
-*`!slot1 incineroar ; sitrus`
-*`!slot2 garchomp ; choice-scarf`
-*`!slot3 rotom-wash ; leftovers`
-*`!poke2 d`
-`!item3 life-orb`
-`!pokel`
+* `!slot1 incineroar ; sitrus`
+* `!slot2 garchomp ; choice-scarf`
+* `!slot3 rotom-wash ; leftovers`
+* `!poke2 d`
+* `!item3 life-orb`
+* `!pokel`
