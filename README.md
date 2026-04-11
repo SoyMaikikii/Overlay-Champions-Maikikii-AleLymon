@@ -15,10 +15,15 @@ Overlay HTML/CSS/JS para OBS con soporte para:
 ## Uso en OBS
 
 Crea una Fuente de Navegador con resolución 1920x1070 con una URL como esta:
+
 `https://soymaikikii.github.io/Overlay-Champions-Maikikii-AleLymon/index.html?canal=TUCANAL&overlay=1`
+
 Observa que en la URL hay una parte que dice "TUCANAL", debes de borrar esa palabra y poner tu usuario de twitch en minúsculas. Por ejemplo en mi caso sería:
+
 `https://soymaikikii.github.io/Overlay-Champions-Maikikii-AleLymon/index.html?canal=soymaikikii&overlay=1`
+
 Puedes probar las siguientes opciones:
+
 `index.html?canal=TU_CANAL&overlay=1`
 `index.html?canal=TU_CANAL&overlay=1-nocam`
 `index.html?canal=TU_CANAL&overlay=2`
