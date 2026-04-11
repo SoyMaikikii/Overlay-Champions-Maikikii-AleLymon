@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overlay Pokémon - Maikikii</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+  <script src="./js/aliases.js"></script>
+  <script src="./js/sprite-overrides.js"></script>
+  <script defer src="./js/main.js"></script>
+</head>
+<body>
+  <div id="overlay" class="overlay">
+    <div id="spritesLayer" class="sprites-layer">
+      <div id="team" class="team"></div>
+    </div>
+
+    <img id="overlayImage" class="overlay-image hidden" src="" alt="Overlay base" />
+
+    <div id="itemsLayer" class="items-layer"></div>
+
+    <div id="errorBox" class="error-box hidden"></div>
+  </div>
+</body>
+</html>
