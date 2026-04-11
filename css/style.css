@@ -73,7 +73,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 999px;
+
   overflow: hidden;
 }
 
@@ -134,8 +134,8 @@ body {
 
 body.layout-right-cam,
 body.layout-right-nocam {
-  --slot-size: 86px;
-  --portrait-size: 88px;
+  --slot-size: 100px;
+  --portrait-size: 98px;
   --item-size: 40px;
 }
 
@@ -181,8 +181,8 @@ body.layout-right-nocam .item-slot-6 { left: 1332px; top: 1035px; }
 
 body.layout-left-cam,
 body.layout-left-nocam {
-  --slot-size: 104px;
-  --portrait-size: 110px;
+  --slot-size: 124px;
+  --portrait-size: 122px;
   --item-size: 44px;
 }
 
