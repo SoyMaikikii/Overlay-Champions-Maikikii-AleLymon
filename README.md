@@ -49,7 +49,7 @@ Solo el streamer o un mod del canal pueden ejecutar comandos.
 
 ### Comando combinado recomendado
 
-* `!slot1 incineroar ; sitrus`
+`!slot1 incineroar ; sitrus`
 
 Este comando coloca:
 
