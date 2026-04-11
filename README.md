@@ -24,13 +24,10 @@ Observa que en la URL hay una parte que dice "TUCANAL", debes de borrar esa pala
 
 Puedes probar las siguientes opciones:
 
-`index.html?canal=TU_CANAL&overlay=1`
-
-`index.html?canal=TU_CANAL&overlay=1-nocam`
-
-`index.html?canal=TU_CANAL&overlay=2`
-
-`index.html?canal=TU_CANAL&overlay=2-nocam`
+* `index.html?canal=TU_CANAL&overlay=1`
+* `index.html?canal=TU_CANAL&overlay=1-nocam`
+* `index.html?canal=TU_CANAL&overlay=2`
+* `index.html?canal=TU_CANAL&overlay=2-nocam`
 
 ## Permisos
 
@@ -40,19 +37,19 @@ Solo el streamer o un mod del canal pueden ejecutar comandos.
 
 ### Pokémon
 
-*`!poke1 incineroar` → pone un Pokémon en el slot 1
-*`!poke1` → limpia solo el Pokémon del slot 1
-*`!poke1 d` → marca el Pokémon como derrotado
-*`!poke1 alive` → revive el Pokémon
+* `!poke1 incineroar` → pone un Pokémon en el slot 1
+* `!poke1` → limpia solo el Pokémon del slot 1
+* `!poke1 d` → marca el Pokémon como derrotado
+* `!poke1 alive` → revive el Pokémon
 
 ### Items
 
-*`!item1 leftovers` → pone un item en el slot 1
-*`!item1` → quita el item del slot 1
+* `!item1 leftovers` → pone un item en el slot 1
+* `!item1` → quita el item del slot 1
 
 ### Comando combinado recomendado
 
-*`!slot1 incineroar ; sitrus`
+* `!slot1 incineroar ; sitrus`
 
 Este comando coloca:
 
@@ -63,9 +60,9 @@ También acepta `|` y `/` como separadores.
 
 ### Limpiar slots
 
-*`!slot1` → limpia completamente el slot 1
-*`!pokel` → limpia todo el equipo
-*`!pokel 1 3 5` → limpia slots específicos
+* `!slot1` → limpia completamente el slot 1
+* `!pokel` → limpia todo el equipo
+* `!pokel 1 3 5` → limpia slots específicos
 
 ## Alias de items
 
