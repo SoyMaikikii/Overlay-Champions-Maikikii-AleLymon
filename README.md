@@ -42,8 +42,8 @@ Solo el streamer o un mod del canal pueden ejecutar comandos.
 
 * `!poke1 incineroar` → pone un Pokémon en el slot 1
 * `!poke1` → limpia solo el Pokémon del slot 1
-* `!poke1 d` → marca el Pokémon como derrotado
-* `!poke1 alive` → revive el Pokémon
+* `!poke1 m` → marca el Pokémon como derrotado
+* `!poke1 v` → revive el Pokémon
 
 ### Items
 
@@ -66,6 +66,7 @@ También acepta `|` y `/` como separadores.
 * `!slot1` → limpia completamente el slot 1
 * `!pokel` → limpia todo el equipo
 * `!pokel 1 3 5` → limpia slots específicos
+* `!slotl 1 3 5` → limpia slots específicos
 
 ## Alias de items
 
@@ -104,6 +105,6 @@ Ejemplos:
 * `!slot1 incineroar ; sitrus`
 * `!slot2 garchomp ; choice-scarf`
 * `!slot3 rotom-wash ; leftovers`
-* `!poke2 d`
+* `!poke2 m`
 * `!item3 life-orb`
 * `!pokel`
