@@ -3,7 +3,7 @@ Diseño del Overlay por Ale Lymon:
 - Twitter: https://x.com/Ale_Lymon
 - Comisiones Overlay: https://vgen.co/AleLymon
 
-La base del widget automático fue tomada del widget de CdoDiego pero modificada para agregar muchas más funciones: https://github.com/cdoDiego
+La base del widget automático fue tomada del widget de CdoDiego pero modificada para agregar muchas más funciones: [https://github.com/cdoDiego](https://github.com/cdoDiego/DuoDinamico)
 
 # Overlay Champions - Manual rápido
 
