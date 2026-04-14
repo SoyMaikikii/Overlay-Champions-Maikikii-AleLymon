@@ -27,10 +27,10 @@ Observa que en la URL hay una parte que dice "TUCANAL", debes de borrar esa pala
 
 Puedes probar las siguientes opciones:
 
-* `index.html?canal=TU_CANAL&overlay=1`
-* `index.html?canal=TU_CANAL&overlay=1-nocam`
-* `index.html?canal=TU_CANAL&overlay=2`
-* `index.html?canal=TU_CANAL&overlay=2-nocam`
+* `index.html?canal=TUCANAL&overlay=1`
+* `index.html?canal=TUCANAL&overlay=1-nocam`
+* `index.html?canal=TUCANAL&overlay=2`
+* `index.html?canal=TUCANAL&overlay=2-nocam`
 
 ## Permisos
 
