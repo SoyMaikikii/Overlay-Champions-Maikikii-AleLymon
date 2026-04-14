@@ -2,6 +2,7 @@ Overlay HTML/CSS/JS para Pokémon Champions con sprites, items y variantes de ov
 Diseño del Overlay por Ale Lymon:
 - Twitter: https://x.com/Ale_Lymon
 - Comisiones Overlay: https://vgen.co/AleLymon
+La base del widget automático fue tomada del widget de CdoDiego pero modificada para agregar muchas más funciones: https://github.com/cdoDiego
 
 # Overlay Champions - Manual rápido
 
