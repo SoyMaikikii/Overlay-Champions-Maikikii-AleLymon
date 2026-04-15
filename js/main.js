@@ -169,6 +169,16 @@ const SPECIAL_FORM_FLAG_ALIASES = {
   'mega-y': 'mega-y',
   '-megay': 'mega-y',
   'megay': 'mega-y',
+  
+    '-female': 'female',
+  'female': 'female',
+  '-hembra': 'female',
+  'hembra': 'female',
+
+  '-male': 'male',
+  'male': 'male',
+  '-macho': 'male',
+  'macho': 'male',
 };
 
 const BASE_IDENTIFIER_ALIASES = {
@@ -178,6 +188,7 @@ const BASE_IDENTIFIER_ALIASES = {
   keldeo: 'keldeo-ordinary',
   shaymin: 'shaymin-land',
   aegislash: 'aegislash-shield',
+  basculegion: 'basculegion-male',
 };
 
 const IDENTIFIER_FORM_ALIASES = {
@@ -208,6 +219,12 @@ const IDENTIFIER_FORM_ALIASES = {
 
   'mewtwo-mega-x': { apiIdentifier: 'mewtwo', specialForm: 'mega-x' },
   'mewtwo-mega-y': { apiIdentifier: 'mewtwo', specialForm: 'mega-y' },
+  
+  'basculegion-female': { apiIdentifier: 'basculegion-male', specialForm: 'female' },
+  'basculegion-hembra': { apiIdentifier: 'basculegion-male', specialForm: 'female' },
+
+  'basculegion-male': { apiIdentifier: 'basculegion-male', specialForm: 'male' },
+  'basculegion-macho': { apiIdentifier: 'basculegion-male', specialForm: 'male' },
 };
 
 const SPECIAL_FORM_SLOTS = {
@@ -229,7 +246,7 @@ const SPECIAL_FORM_SLOTS = {
 
   'shaymin-land': { sky: '0001' },
   
-    charizard: {
+  charizard: {
     'mega-x': '0001',
     'mega-y': '0002',
   },
@@ -238,6 +255,17 @@ const SPECIAL_FORM_SLOTS = {
     'mega-y': '0001',
     'mega-x': '0002',
   },
+  
+  'basculegion-male': {
+	  male: {
+		path: '',
+		shinyPath: '',
+	  },
+	  female: {
+		path: '0000/0000/0002',
+		shinyPath: '0000/0001/0002',
+	  },
+	},
 };
 
 let canal = '';
@@ -588,11 +616,25 @@ function resolvePokemonRequest(identifier, flags = {}) {
   };
 }
 
-function getSpecialFormPath(apiIdentifier, specialForm) {
-  if (!specialForm) return '';
+function getSpecialFormConfig(apiIdentifier, specialForm) {
+  if (!specialForm) return null;
 
   const formData = SPECIAL_FORM_SLOTS[apiIdentifier];
-  return formData?.[specialForm] || '';
+  const entry = formData?.[specialForm];
+
+  if (entry === undefined) return null;
+
+  if (typeof entry === 'string') {
+    return {
+      path: entry,
+      shinyPath: '',
+    };
+  }
+
+  return {
+    path: entry?.path || '',
+    shinyPath: entry?.shinyPath || '',
+  };
 }
 
 function sanitizeSpeciesKey(name) {
@@ -782,18 +824,20 @@ async function setPokemon(index, identifier, nickname, flags = {}) {
     const numero = String(pokemon.id).padStart(4, '0');
     const species = pokemon.species?.name || apiIdentifier;
 
-    const specialFormPath = getSpecialFormPath(apiIdentifier, resolvedFlags.specialForm);
-    const regionalFormPath = specialFormPath ? '' : getRegionalFormPath(species, resolvedFlags.region);
+    const specialFormConfig = getSpecialFormConfig(apiIdentifier, resolvedFlags.specialForm);
+	const regionalFormPath = specialFormConfig ? '' : getRegionalFormPath(species, resolvedFlags.region);
 
-    const formPath = specialFormPath || regionalFormPath;
+	const formPath = specialFormConfig?.path || regionalFormPath;
+	const formShinyPath = specialFormConfig?.shinyPath || '';
 
-    const spriteFlags = {
-      shiny: !!resolvedFlags.shiny,
-      mega: formPath ? false : !!resolvedFlags.mega,
-      region: resolvedFlags.region || null,
-      specialForm: resolvedFlags.specialForm || null,
-      formPath,
-    };
+	const spriteFlags = {
+	  shiny: !!resolvedFlags.shiny,
+	  mega: formPath ? false : !!resolvedFlags.mega,
+	  region: resolvedFlags.region || null,
+	  specialForm: resolvedFlags.specialForm || null,
+	  formPath,
+	  formShinyPath,
+	};
 
     const displayName = nickname || formatDisplayName(species);
 
@@ -801,24 +845,25 @@ async function setPokemon(index, identifier, nickname, flags = {}) {
     const spriteDead = await resolvePortraitByPriority(numero, DEAD_EMOTIONS, spriteFlags);
 
     team[index] = {
-      poke: apiIdentifier,
-      originalInput: identifier,
-      name: species,
-      nick: displayName,
-      numero,
-      dead: false,
+	  poke: apiIdentifier,
+	  originalInput: identifier,
+	  name: species,
+	  nick: displayName,
+	  numero,
+	  dead: false,
 
-      shiny: spriteFlags.shiny,
-      mega: spriteFlags.mega,
-      region: spriteFlags.region,
-      specialForm: spriteFlags.specialForm,
-      formPath: spriteFlags.formPath,
-      customOverride: false,
+	  shiny: spriteFlags.shiny,
+	  mega: spriteFlags.mega,
+	  region: spriteFlags.region,
+	  specialForm: spriteFlags.specialForm,
+	  formPath: spriteFlags.formPath,
+	  formShinyPath: spriteFlags.formShinyPath,
+	  customOverride: false,
 
-      sprite: spriteAlive,
-      spriteAlive,
-      spriteDead,
-    };
+	  sprite: spriteAlive,
+	  spriteAlive,
+	  spriteDead,
+	};
 
     saveState();
     renderSlot(index);
@@ -911,9 +956,10 @@ function buildVariantPath(flags = {}) {
   const shiny = !!flags.shiny;
   const mega = !!flags.mega;
   const formPath = flags.formPath || '';
+  const formShinyPath = flags.formShinyPath || '';
 
-  if (formPath) {
-    if (shiny) return `${formPath}/0001`;
+  if (formPath || formShinyPath) {
+    if (shiny) return formShinyPath || `${formPath}/0001`;
     return formPath;
   }
 
