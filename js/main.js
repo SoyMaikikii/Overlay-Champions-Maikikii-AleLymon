@@ -159,6 +159,16 @@ const SPECIAL_FORM_FLAG_ALIASES = {
   'sky': 'sky',
   '-cielo': 'sky',
   'cielo': 'sky',
+  
+  '-mega-x': 'mega-x',
+  'mega-x': 'mega-x',
+  '-megax': 'mega-x',
+  'megax': 'mega-x',
+
+  '-mega-y': 'mega-y',
+  'mega-y': 'mega-y',
+  '-megay': 'mega-y',
+  'megay': 'mega-y',
 };
 
 const BASE_IDENTIFIER_ALIASES = {
@@ -182,10 +192,22 @@ const IDENTIFIER_FORM_ALIASES = {
   'rotom-frost': { apiIdentifier: 'rotom', specialForm: 'frost' },
   'rotom-fan': { apiIdentifier: 'rotom', specialForm: 'fan' },
   'rotom-mow': { apiIdentifier: 'rotom', specialForm: 'mow' },
+  
+  'rotom-horno': { apiIdentifier: 'rotom', specialForm: 'heat' },
+  'rotom-lavadora': { apiIdentifier: 'rotom', specialForm: 'wash' },
+  'rotom-refrigerador': { apiIdentifier: 'rotom', specialForm: 'frost' },
+  'rotom-ventilador': { apiIdentifier: 'rotom', specialForm: 'fan' },
+  'rotom-podadora': { apiIdentifier: 'rotom', specialForm: 'mow' },
 
   'aegislash-blade': { apiIdentifier: 'aegislash-shield', specialForm: 'blade' },
 
   'shaymin-sky': { apiIdentifier: 'shaymin-land', specialForm: 'sky' },
+  
+  'charizard-mega-x': { apiIdentifier: 'charizard', specialForm: 'mega-x' },
+  'charizard-mega-y': { apiIdentifier: 'charizard', specialForm: 'mega-y' },
+
+  'mewtwo-mega-x': { apiIdentifier: 'mewtwo', specialForm: 'mega-x' },
+  'mewtwo-mega-y': { apiIdentifier: 'mewtwo', specialForm: 'mega-y' },
 };
 
 const SPECIAL_FORM_SLOTS = {
@@ -206,6 +228,16 @@ const SPECIAL_FORM_SLOTS = {
   'aegislash-shield': { blade: '0001' },
 
   'shaymin-land': { sky: '0001' },
+  
+    charizard: {
+    'mega-x': '0001',
+    'mega-y': '0002',
+  },
+
+  mewtwo: {
+    'mega-y': '0001',
+    'mega-x': '0002',
+  },
 };
 
 let canal = '';
