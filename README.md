@@ -100,11 +100,22 @@ Ejemplos:
 * `!item3 charizardita-x`
 * `!item4 mewtwoita-y`
 
+## Formas comunes
+
+* Mega Floette `!poke1 floette-eterna`
+* Mega Charizard Y `!poke1 charizard-mega-y`
+* Mega Charizard X `!poke1 charizard-mega-x`
+* Rotom Horno `!poke1 rotom-horno`
+* Rotom lavadora `!poke1 rotom-lavadora`
+* Rotom refrigerador `!poke1 rotom-refrigerador`
+* Rotom ventilador `!poke1 rotom-ventilador`
+* Rotom podadora `!poke1 rotom-podadora`
+
 ## Ejemplos rápidos
 
 * `!slot1 incineroar ; sitrus`
 * `!slot2 garchomp ; choice-scarf`
-* `!slot3 rotom-wash ; leftovers`
+* `!slot3 rotom-lavadora ; restos`
 * `!poke2 m`
 * `!item3 life-orb`
 * `!pokel`
