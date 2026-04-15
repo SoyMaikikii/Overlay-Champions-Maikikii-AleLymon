@@ -3,6 +3,9 @@ Diseño del Overlay por Ale Lymon:
 - Twitter: https://x.com/Ale_Lymon
 - Comisiones Overlay: https://vgen.co/AleLymon
 
+Los Sprites del Widget son obtenidos de PMD Sprite Repository:
+https://sprites.pmdcollab.org/
+
 La base del widget automático fue tomada del widget de CdoDiego pero modificada para agregar muchas más funciones: [https://github.com/cdoDiego](https://github.com/cdoDiego/DuoDinamico)
 
 # Overlay Champions - Manual rápido
