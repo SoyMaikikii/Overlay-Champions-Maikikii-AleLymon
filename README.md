@@ -108,6 +108,8 @@ Ejemplos:
 * Mega Floette `!poke1 floette-eterna`
 * Mega Charizard Y `!poke1 charizard-mega-y`
 * Mega Charizard X `!poke1 charizard-mega-x`
+* Basculegion Macho  `!poke1 basculegion-macho`
+* Basculegion Hembra `!poke1 basculegion-hembnra`
 * Rotom Horno `!poke1 rotom-horno`
 * Rotom lavadora `!poke1 rotom-lavadora`
 * Rotom refrigerador `!poke1 rotom-refrigerador`
