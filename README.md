@@ -115,6 +115,9 @@ Ejemplos:
 * Rotom refrigerador `!poke1 rotom-refrigerador`
 * Rotom ventilador `!poke1 rotom-ventilador`
 * Rotom podadora `!poke1 rotom-podadora`
+* Tauros Paldea `!poke1 tauros-paldea`
+* Tauros Paldea Fuego `!poke1 tauros-paldea-fuego`
+* Tauros Paldea Agua `!poke1 tauros-paldea-agua`
 
 ## Ejemplos rápidos
 
