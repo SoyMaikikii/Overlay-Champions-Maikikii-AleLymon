@@ -179,6 +179,27 @@ const SPECIAL_FORM_FLAG_ALIASES = {
   'male': 'male',
   '-macho': 'male',
   'macho': 'male',
+  
+  '-paldea': 'paldea',
+  'paldea': 'paldea',
+
+  '-fuego': 'paldea-fire',
+  'fuego': 'paldea-fire',
+  '-fire': 'paldea-fire',
+  'fire': 'paldea-fire',
+  '-paldea-fuego': 'paldea-fire',
+  'paldea-fuego': 'paldea-fire',
+  '-paldea-fire': 'paldea-fire',
+  'paldea-fire': 'paldea-fire',
+
+  '-agua': 'paldea-water',
+  'agua': 'paldea-water',
+  '-water': 'paldea-water',
+  'water': 'paldea-water',
+  '-paldea-agua': 'paldea-water',
+  'paldea-agua': 'paldea-water',
+  '-paldea-water': 'paldea-water',
+  'paldea-water': 'paldea-water',
 };
 
 const BASE_IDENTIFIER_ALIASES = {
@@ -225,6 +246,14 @@ const IDENTIFIER_FORM_ALIASES = {
 
   'basculegion-male': { apiIdentifier: 'basculegion-male', specialForm: 'male' },
   'basculegion-macho': { apiIdentifier: 'basculegion-male', specialForm: 'male' },
+  
+   'tauros-paldea': { apiIdentifier: 'tauros', specialForm: 'paldea' },
+
+  'tauros-paldea-fuego': { apiIdentifier: 'tauros', specialForm: 'paldea-fire' },
+  'tauros-paldea-fire': { apiIdentifier: 'tauros', specialForm: 'paldea-fire' },
+
+  'tauros-paldea-agua': { apiIdentifier: 'tauros', specialForm: 'paldea-water' },
+  'tauros-paldea-water': { apiIdentifier: 'tauros', specialForm: 'paldea-water' },
 };
 
 const SPECIAL_FORM_SLOTS = {
@@ -266,6 +295,33 @@ const SPECIAL_FORM_SLOTS = {
 		shinyPath: '0000/0001/0002',
 	  },
 	},
+  tauros: {
+    paldea: '0001',
+    'paldea-fire': '0002',
+    'paldea-water': '0003',
+  },
+};
+
+const SPECIAL_FORM_DISPLAY = {
+  therian: 'Therian',
+  resolute: 'Resolute',
+  heat: 'Heat',
+  wash: 'Wash',
+  frost: 'Frost',
+  fan: 'Fan',
+  mow: 'Mow',
+  blade: 'Blade',
+  sky: 'Sky',
+
+  'mega-x': 'Mega X',
+  'mega-y': 'Mega Y',
+
+  male: 'Male',
+  female: 'Female',
+
+  paldea: 'Paldea',
+  'paldea-fire': 'Paldea Fuego',
+  'paldea-water': 'Paldea Agua',
 };
 
 let canal = '';
@@ -582,7 +638,8 @@ function parsePokemonMessage(rawMessage) {
     }
 
     if (SPECIAL_FORM_FLAG_ALIASES[normalized]) {
-      flags.specialForm = SPECIAL_FORM_FLAG_ALIASES[normalized];
+      const incomingForm = SPECIAL_FORM_FLAG_ALIASES[normalized];
+      flags.specialForm = mergeSpecialForms(flags.specialForm, incomingForm);
       continue;
     }
 
@@ -594,6 +651,21 @@ function parsePokemonMessage(rawMessage) {
     nickname: nicknameParts.join(' ').trim(),
     flags,
   };
+}
+
+function mergeSpecialForms(currentForm, incomingForm) {
+  if (!currentForm) return incomingForm;
+  if (!incomingForm) return currentForm;
+
+  const forms = new Set([currentForm, incomingForm]);
+
+  if (forms.has('paldea-fire')) return 'paldea-fire';
+  if (forms.has('paldea-water')) return 'paldea-water';
+
+  if (forms.has('paldea') && forms.has('paldea-fire')) return 'paldea-fire';
+  if (forms.has('paldea') && forms.has('paldea-water')) return 'paldea-water';
+
+  return incomingForm;
 }
 
 function resolvePokemonRequest(identifier, flags = {}) {
