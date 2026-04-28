@@ -79,6 +79,7 @@ const VALID_ITEMS = new Set([
   'white-herb',
   'wiki-berry',
   'yache-berry',
+  'never-melt-ice'
 ]);
 
 const MEGA_STONE_ITEMS = [
@@ -828,7 +829,7 @@ const ITEM_ALIASES = {
   'hierba blanca': 'white-herb',
   
   //megapiedras
-'barbaraclita': 'barbaraclita',
+  'barbaraclita': 'barbaraclita',
   'barbaracite': 'barbaraclita',
 
   'baxcaliburita': 'baxcaliburita',
@@ -1118,6 +1119,14 @@ const ITEM_ALIASES = {
 
   'victreebelita': 'victreebelita',
   'victreebelite': 'victreebelita',
+  
+  'never-melt-ice': 'never-melt-ice',
+  'never melt ice': 'never-melt-ice',
+  'never-melt ice': 'never-melt-ice',
+  'ice': 'never-melt-ice',
+  'hielo-perpetuo': 'never-melt-ice',
+  'hielo perpetuo': 'never-melt-ice',
+  'hielo': 'never-melt-ice',
 };
 
 function normalizeItemName(value) {
