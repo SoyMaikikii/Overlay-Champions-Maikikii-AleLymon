@@ -210,6 +210,7 @@ const BASE_IDENTIFIER_ALIASES = {
   shaymin: 'shaymin-land',
   aegislash: 'aegislash-shield',
   basculegion: 'basculegion-male',
+  pyroar: 'pyroar-male',
 };
 
 const IDENTIFIER_FORM_ALIASES = {
@@ -240,12 +241,26 @@ const IDENTIFIER_FORM_ALIASES = {
 
   'mewtwo-mega-x': { apiIdentifier: 'mewtwo', specialForm: 'mega-x' },
   'mewtwo-mega-y': { apiIdentifier: 'mewtwo', specialForm: 'mega-y' },
+
+  'raichu-mega-x': { apiIdentifier: 'raichu', specialForm: 'mega-x' },
+  'raichu-megax': { apiIdentifier: 'raichu', specialForm: 'mega-x' },
+  'mega-raichu-x': { apiIdentifier: 'raichu', specialForm: 'mega-x' },
+  'raichu-mega-y': { apiIdentifier: 'raichu', specialForm: 'mega-y' },
+  'raichu-megay': { apiIdentifier: 'raichu', specialForm: 'mega-y' },
+  'mega-raichu-y': { apiIdentifier: 'raichu', specialForm: 'mega-y' },
   
   'basculegion-female': { apiIdentifier: 'basculegion-male', specialForm: 'female' },
   'basculegion-hembra': { apiIdentifier: 'basculegion-male', specialForm: 'female' },
 
   'basculegion-male': { apiIdentifier: 'basculegion-male', specialForm: 'male' },
   'basculegion-macho': { apiIdentifier: 'basculegion-male', specialForm: 'male' },
+
+  'pyroar-female': { apiIdentifier: 'pyroar-male', specialForm: 'female' },
+  'pyroar-hembra': { apiIdentifier: 'pyroar-male', specialForm: 'female' },
+  'pyroar-male': { apiIdentifier: 'pyroar-male', specialForm: 'male' },
+  'pyroar-macho': { apiIdentifier: 'pyroar-male', specialForm: 'male' },
+  'pyroar-mega': { apiIdentifier: 'pyroar-male', specialForm: 'mega' },
+  'mega-pyroar': { apiIdentifier: 'pyroar-male', specialForm: 'mega' },
   
    'tauros-paldea': { apiIdentifier: 'tauros', specialForm: 'paldea' },
 
@@ -284,6 +299,17 @@ const SPECIAL_FORM_SLOTS = {
     'mega-y': '0001',
     'mega-x': '0002',
   },
+
+  raichu: {
+    'mega-x': {
+      path: '0002',
+      shinyPath: '0002',
+    },
+    'mega-y': {
+      path: '0003',
+      shinyPath: '0003/0001',
+    },
+  },
   
   'basculegion-male': {
 	  male: {
@@ -295,6 +321,20 @@ const SPECIAL_FORM_SLOTS = {
 		shinyPath: '0000/0001/0002',
 	  },
 	},
+  'pyroar-male': {
+    male: {
+      path: '',
+      shinyPath: '',
+    },
+    female: {
+      path: '0000/0000/0002',
+      shinyPath: '0000/0001/0002',
+    },
+    mega: {
+      path: '0001',
+      shinyPath: '0001/0001',
+    },
+  },
   tauros: {
     paldea: '0001',
     'paldea-fire': '0002',
@@ -315,6 +355,7 @@ const SPECIAL_FORM_DISPLAY = {
 
   'mega-x': 'Mega X',
   'mega-y': 'Mega Y',
+  mega: 'Mega',
 
   male: 'Male',
   female: 'Female',
@@ -885,6 +926,10 @@ async function setPokemon(index, identifier, nickname, flags = {}) {
     const resolved = resolvePokemonRequest(identifier, flags);
     const apiIdentifier = resolved.apiIdentifier;
     const resolvedFlags = resolved.flags;
+
+    if (apiIdentifier === 'raichu' && resolvedFlags.mega && !resolvedFlags.specialForm) {
+      resolvedFlags.specialForm = 'mega-x';
+    }
 
     const pokemon = await fetchPokemon(apiIdentifier);
 
