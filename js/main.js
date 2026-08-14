@@ -159,6 +159,54 @@ const SPECIAL_FORM_FLAG_ALIASES = {
   'sky': 'sky',
   '-cielo': 'sky',
   'cielo': 'sky',
+
+  '-dusk': 'dusk',
+  'dusk': 'dusk',
+  '-crepuscular': 'dusk',
+  'crepuscular': 'dusk',
+
+  '-midnight': 'midnight',
+  'midnight': 'midnight',
+  '-nocturna': 'midnight',
+  'nocturna': 'midnight',
+  '-nocturno': 'midnight',
+  'nocturno': 'midnight',
+
+  '-family-of-three': 'family-of-three',
+  'family-of-three': 'family-of-three',
+  '-familia-de-tres': 'family-of-three',
+  'familia-de-tres': 'family-of-three',
+  '-tres': 'family-of-three',
+  'tres': 'family-of-three',
+
+  '-family-of-four': 'family-of-four',
+  'family-of-four': 'family-of-four',
+  '-familia-de-cuatro': 'family-of-four',
+  'familia-de-cuatro': 'family-of-four',
+  '-cuatro': 'family-of-four',
+  'cuatro': 'family-of-four',
+
+  '-full-belly': 'full-belly',
+  'full-belly': 'full-belly',
+  '-saciado': 'full-belly',
+  'saciado': 'full-belly',
+
+  '-hangry': 'hangry',
+  'hangry': 'hangry',
+  '-hambriento': 'hangry',
+  'hambriento': 'hangry',
+
+  '-zero': 'zero',
+  'zero': 'zero',
+  '-cero': 'zero',
+  'cero': 'zero',
+
+  '-hero': 'hero',
+  'hero': 'hero',
+  '-heroe': 'hero',
+  'heroe': 'hero',
+  '-héroe': 'hero',
+  'héroe': 'hero',
   
   '-mega-x': 'mega-x',
   'mega-x': 'mega-x',
@@ -210,6 +258,12 @@ const BASE_IDENTIFIER_ALIASES = {
   shaymin: 'shaymin-land',
   aegislash: 'aegislash-shield',
   basculegion: 'basculegion-male',
+  gourgeist: 'gourgeist-average',
+  lycanroc: 'lycanroc-midday',
+  maushold: 'maushold-family-of-four',
+  meowstic: 'meowstic-male',
+  morpeko: 'morpeko-full-belly',
+  palafin: 'palafin-zero',
   pyroar: 'pyroar-male',
 };
 
@@ -241,6 +295,37 @@ const IDENTIFIER_FORM_ALIASES = {
 
   'mewtwo-mega-x': { apiIdentifier: 'mewtwo', specialForm: 'mega-x' },
   'mewtwo-mega-y': { apiIdentifier: 'mewtwo', specialForm: 'mega-y' },
+
+  'lycanroc-dusk': { apiIdentifier: 'lycanroc-midday', specialForm: 'dusk' },
+  'lycanroc-crepuscular': { apiIdentifier: 'lycanroc-midday', specialForm: 'dusk' },
+  'lycanroc-midnight': { apiIdentifier: 'lycanroc-midday', specialForm: 'midnight' },
+  'lycanroc-nocturna': { apiIdentifier: 'lycanroc-midday', specialForm: 'midnight' },
+  'lycanroc-nocturno': { apiIdentifier: 'lycanroc-midday', specialForm: 'midnight' },
+
+  'maushold-family-of-three': { apiIdentifier: 'maushold-family-of-four', specialForm: 'family-of-three' },
+  'maushold-familia-de-tres': { apiIdentifier: 'maushold-family-of-four', specialForm: 'family-of-three' },
+  'maushold-tres': { apiIdentifier: 'maushold-family-of-four', specialForm: 'family-of-three' },
+  'maushold-family-of-four': { apiIdentifier: 'maushold-family-of-four', specialForm: 'family-of-four' },
+  'maushold-familia-de-cuatro': { apiIdentifier: 'maushold-family-of-four', specialForm: 'family-of-four' },
+  'maushold-cuatro': { apiIdentifier: 'maushold-family-of-four', specialForm: 'family-of-four' },
+
+  'meowstic-female': { apiIdentifier: 'meowstic-male', specialForm: 'female' },
+  'meowstic-hembra': { apiIdentifier: 'meowstic-male', specialForm: 'female' },
+  'meowstic-male': { apiIdentifier: 'meowstic-male', specialForm: 'male' },
+  'meowstic-macho': { apiIdentifier: 'meowstic-male', specialForm: 'male' },
+  'meowstic-mega': { apiIdentifier: 'meowstic-male', specialForm: 'mega' },
+  'mega-meowstic': { apiIdentifier: 'meowstic-male', specialForm: 'mega' },
+
+  'morpeko-full-belly': { apiIdentifier: 'morpeko-full-belly', specialForm: 'full-belly' },
+  'morpeko-saciado': { apiIdentifier: 'morpeko-full-belly', specialForm: 'full-belly' },
+  'morpeko-hangry': { apiIdentifier: 'morpeko-full-belly', specialForm: 'hangry' },
+  'morpeko-hambriento': { apiIdentifier: 'morpeko-full-belly', specialForm: 'hangry' },
+
+  'palafin-zero': { apiIdentifier: 'palafin-zero', specialForm: 'zero' },
+  'palafin-cero': { apiIdentifier: 'palafin-zero', specialForm: 'zero' },
+  'palafin-hero': { apiIdentifier: 'palafin-zero', specialForm: 'hero' },
+  'palafin-heroe': { apiIdentifier: 'palafin-zero', specialForm: 'hero' },
+  'palafin-héroe': { apiIdentifier: 'palafin-zero', specialForm: 'hero' },
 
   'raichu-mega-x': { apiIdentifier: 'raichu', specialForm: 'mega-x' },
   'raichu-megax': { apiIdentifier: 'raichu', specialForm: 'mega-x' },
@@ -300,6 +385,47 @@ const SPECIAL_FORM_SLOTS = {
     'mega-x': '0002',
   },
 
+  'lycanroc-midday': {
+    dusk: {
+      path: '0002',
+      shinyPath: '0002/0001',
+    },
+    midnight: {
+      path: '0001',
+      shinyPath: '0001/0001',
+    },
+  },
+
+  'maushold-family-of-four': {
+    'family-of-three': '0001',
+    'family-of-four': '',
+  },
+
+  'meowstic-male': {
+    male: {
+      path: '',
+      shinyPath: '',
+    },
+    female: {
+      path: '0000/0000/0002',
+      shinyPath: '0000/0001/0002',
+    },
+    mega: {
+      path: '0001',
+      shinyPath: '0001/0001',
+    },
+  },
+
+  'morpeko-full-belly': {
+    'full-belly': '',
+    hangry: '0001',
+  },
+
+  'palafin-zero': {
+    zero: '',
+    hero: '0001',
+  },
+
   raichu: {
     'mega-x': {
       path: '0002',
@@ -356,6 +482,14 @@ const SPECIAL_FORM_DISPLAY = {
   'mega-x': 'Mega X',
   'mega-y': 'Mega Y',
   mega: 'Mega',
+  dusk: 'Crepuscular',
+  midnight: 'Nocturna',
+  'family-of-three': 'Familia de Tres',
+  'family-of-four': 'Familia de Cuatro',
+  'full-belly': 'Saciado',
+  hangry: 'Hambriento',
+  zero: 'Cero',
+  hero: 'Heroe',
 
   male: 'Male',
   female: 'Female',
