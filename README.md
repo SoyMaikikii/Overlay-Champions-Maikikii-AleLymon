@@ -105,6 +105,8 @@ Ejemplos:
 
 ## Formas comunes
 
+* Mega Raichu X `!poke1 raichu-mega-x`
+* Mega Raichu Y `!poke1 raichu-mega-y`
 * Mega Floette `!poke1 floette-eterna`
 * Mega Charizard Y `!poke1 charizard-mega-y`
 * Mega Charizard X `!poke1 charizard-mega-x`
